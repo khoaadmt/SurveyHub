@@ -3,6 +3,11 @@
 /surveyhub_backend/node_modules
 /surveyhub_backend/build
 
+/frontend/dist
+/frontend/node_modules
+/frontend/build
+/frontend/public
+
 # Logs
 logs
 *.log

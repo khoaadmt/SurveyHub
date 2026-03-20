@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "@fontsource/dm-sans";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: "Roboto", sans-serif;
+}
+:root {
+    font-family: "DM Sans", sans-serif;
+}
+
+.ant-form-item-label > label {
+    font-family: inherit;
+}
+
+.ant-input,
+.ant-input-password,
+.ant-btn {
+    font-family: inherit;
+}
+.ant-btn-primary {
+    background-color: #1677ff;
+}
