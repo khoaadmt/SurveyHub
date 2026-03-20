@@ -11,6 +11,9 @@ import Link from "antd/es/typography/Link";
 import { GoogleSVG } from "../../../components/icons/GoogleSVG";
 import { LogoSVG } from "../../../components/icons/LogoSVG";
 import authApi from "../../../api/authApi";
+import { useDispatch, useSelector } from "react-redux";
+import { store } from "../../../redux/store";
+import { setUserInfo } from "../../../redux/userSlice";
 
 interface LoginFormValues {
     email: string;
@@ -26,7 +29,8 @@ export default function LoginPage() {
         setLoading(true);
         setError(null);
         try {
-            await authApi.login(values);
+            const res = await authApi.login(values);
+            store.dispatch(setUserInfo(res.data));
             message.success("Well come back !");
         } catch (err: any) {
             message.error(err.message);
